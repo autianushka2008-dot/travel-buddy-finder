@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Travel Planner</title>
+</head>
+<body>
+
+<h1>🤖 AI Travel Planner</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <label>Destination</label>
+
+    <select name="destination">
+
+        <option>Goa</option>
+        <option>Mumbai</option>
+        <option>Pune</option>
+        <option>Delhi</option>
+        <option>Jaipur</option>
+        <option>Udaipur</option>
+        <option>Manali</option>
+        <option>Shimla</option>
+        <option>Kashmir</option>
+        <option>Lonavala</option>
+        <option>Mahabaleshwar</option>
+        <option>Bangalore</option>
+        <option>Hyderabad</option>
+        <option>Chennai</option>
+        <option>Kolkata</option>
+        <option>Agra</option>
+        <option>Rishikesh</option>
+        <option>Darjeeling</option>
+        <option>Mysore</option>
+        <option>Ooty</option>
+
+    </select>
+
+    <br><br>
+
+    <label>Budget (₹)</label>
+
+    <input type="number" name="budget" required>
+
+    <br><br>
+
+    <button type="submit">
+        Generate Trip
+    </button>
+
+</form>
+
+{% if trip %}
+
+<hr>
+
+<h2>{{ trip.trip_type }}</h2>
+
+<h2>{{ trip.destination }}</h2>
+
+<h3>Budget : ₹{{ trip.budget }}</h3>
+
+<h3>Hotels</h3>
+
+<ul>
+{% for hotel in trip.hotels %}
+<li>{{ hotel }}</li>
+{% endfor %}
+</ul>
+
+<h3>Restaurants</h3>
+
+<ul>
+{% for restaurant in trip.restaurants %}
+<li>{{ restaurant }}</li>
+{% endfor %}
+</ul>
+
+<h3>Local Food</h3>
+
+<ul>
+{% for food in trip.food %}
+<li>{{ food }}</li>
+{% endfor %}
+</ul>
+
+<h3>Tourist Attractions</h3>
+
+<ul>
+{% for place in trip.places %}
+<li>{{ place }}</li>
+{% endfor %}
+</ul>
+
+<h3>Weather</h3>
+
+<p>{{ trip.weather }}</p>
+
+<h3>Transport</h3>
+
+<p>Flight : {{ trip.transport.flight }}</p>
+
+<p>Train : {{ trip.transport.train }}</p>
+
+<p>Bus : {{ trip.transport.bus }}</p>
+
+{% endif %}
+
+</body>
+</html>

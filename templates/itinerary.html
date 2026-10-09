@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Itinerary Generator</title>
+</head>
+
+<body>
+
+<h1>📅 AI Itinerary Generator</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <select name="destination">
+
+        <option>Goa</option>
+        <option>Pune</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+        <option>Jaipur</option>
+        <option>Udaipur</option>
+        <option>Manali</option>
+        <option>Shimla</option>
+        <option>Kashmir</option>
+        <option>Lonavala</option>
+        <option>Mahabaleshwar</option>
+        <option>Bangalore</option>
+        <option>Hyderabad</option>
+        <option>Chennai</option>
+        <option>Kolkata</option>
+        <option>Agra</option>
+        <option>Rishikesh</option>
+        <option>Darjeeling</option>
+        <option>Mysore</option>
+        <option>Ooty</option>
+
+    </select>
+
+    <button type="submit">
+        Generate Itinerary
+    </button>
+
+</form>
+
+{% if itinerary %}
+
+<h2>Your Travel Plan</h2>
+
+{% for day, places in itinerary.items %}
+
+<h3>{{ day }}</h3>
+
+<ul>
+
+{% for place in places %}
+
+<li>{{ place }}</li>
+
+{% endfor %}
+
+</ul>
+
+{% endfor %}
+
+{% endif %}
+
+</body>
+
+</html>

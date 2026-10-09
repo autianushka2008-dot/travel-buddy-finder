@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Expense Splitter</title>
+</head>
+
+<body>
+
+<h1>💰 Expense Splitter</h1>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input type="number" name="amount" placeholder="Total Amount">
+
+<input type="number" name="members" placeholder="Members">
+
+<button type="submit">
+
+Calculate
+
+</button>
+
+</form>
+
+{% if result %}
+<h2>Each Person Pays ₹{{ result }}</h2>
+{% endif %}
+
+</body>
+</html>

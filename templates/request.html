@@ -1,0 +1,15 @@
+<h1>Friend Requests</h1>
+
+{% for req in requests %}
+
+<p>
+
+{{ req.sender.username }}
+
+-
+
+{{ req.status }}
+
+</p>
+
+{% endfor %}

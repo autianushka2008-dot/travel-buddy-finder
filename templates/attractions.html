@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Attractions</title>
+</head>
+
+<body>
+
+<h1>🚕 Tourist Attractions</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <select name="destination">
+
+        <option>Goa</option>
+        <option>Pune</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+        <option>Jaipur</option>
+        <option>Udaipur</option>
+        <option>Manali</option>
+        <option>Shimla</option>
+        <option>Kashmir</option>
+        <option>Lonavala</option>
+        <option>Mahabaleshwar</option>
+        <option>Bangalore</option>
+        <option>Hyderabad</option>
+        <option>Chennai</option>
+        <option>Kolkata</option>
+        <option>Agra</option>
+        <option>Rishikesh</option>
+        <option>Darjeeling</option>
+        <option>Mysore</option>
+        <option>Ooty</option>
+
+    </select>
+
+    <button type="submit">
+        Show Attractions
+    </button>
+
+</form>
+
+{% if attractions %}
+
+<h2>Places To Visit</h2>
+
+<ul>
+
+{% for place in attractions %}
+
+<li>{{ place }}</li>
+
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+</body>
+</html>

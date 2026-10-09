@@ -1,0 +1,45 @@
+.dashboard-card{
+
+    border-radius:20px;
+
+    height:170px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    font-size:22px;
+
+    color:white;
+
+    transition:0.3s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    margin-bottom:25px;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+
+}
+
+.dashboard-card i{
+
+    font-size:45px;
+
+    margin-bottom:12px;
+
+    display:block;
+
+}

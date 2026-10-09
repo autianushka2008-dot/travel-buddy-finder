@@ -1,0 +1,17 @@
+<h2>Chat Room</h2>
+
+{% for msg in messages %}
+<p>
+<b>{{ msg.sender.username }}</b>
+:
+{{ msg.message }}
+</p>
+{% endfor %}
+
+<form method="POST">
+{% csrf_token %}
+<input type="text" name="message">
+<button type="submit">
+Send
+</button>
+</form>

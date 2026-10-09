@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transport Suggestions</title>
+</head>
+<body>
+
+<h1>🚆 Transport Suggestions</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <select name="destination">
+
+        <option>Goa</option>
+        <option>Pune</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+        <option>Jaipur</option>
+        <option>Udaipur</option>
+        <option>Manali</option>
+        <option>Shimla</option>
+        <option>Kashmir</option>
+        <option>Lonavala</option>
+        <option>Mahabaleshwar</option>
+        <option>Bangalore</option>
+        <option>Hyderabad</option>
+        <option>Chennai</option>
+        <option>Kolkata</option>
+        <option>Agra</option>
+        <option>Rishikesh</option>
+        <option>Darjeeling</option>
+        <option>Mysore</option>
+        <option>Ooty</option>
+
+    </select>
+
+    <button type="submit">
+        Show Transport
+    </button>
+
+</form>
+
+{% if transport %}
+
+<h2>Available Transport</h2>
+
+<p>✈ Flight: {{ transport.flight }}</p>
+
+<p>🚂 Train: {{ transport.train }}</p>
+
+<p>🚌 Bus: {{ transport.bus }}</p>
+
+{% endif %}
+
+</body>
+</html>
